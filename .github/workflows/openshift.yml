@@ -141,5 +141,8 @@ jobs:
 
     - name: colin deployment
       run: |
+        export IMAGE=${{ steps.push-image.outputs.registry-path}}
         echo ${{ steps.push-image.outputs.registry-path }}
+        sed -i 's|\${IMAGE]|'""'|g' mypod.yaml
+        oc apply -f mypod.yaml
         oc get pods
