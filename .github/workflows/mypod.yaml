@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: nginx-pod
-  namespace: default
+  namespace: 3cc3ntric-dev
 spec:
   containers:
     - name: nginx
